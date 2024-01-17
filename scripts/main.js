@@ -6,7 +6,6 @@
 const id = (id) => { return document.getElementById(id)}
 
 
-
 const validar = (e) =>{
     e.preventDefault();
     let mensajeError = [];
@@ -28,7 +27,7 @@ const validar = (e) =>{
         mensajeError.forEach(function (error){
             let createLi = document.createElement("li")
             createLi.textContent = error
-            mensaje.appendChild(createLi)
+            id("errores").appendChild(createLi)
         })
     }
 }

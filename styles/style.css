@@ -71,6 +71,7 @@
 }
 
 body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
     background-color: darkslategrey;
 
 }
@@ -85,7 +86,7 @@ body {
     display: flex;
     flex-direction: column; 
     border: 1px solid black;
-    width: 25%;
+    width: 75%;
     margin:5% 25%;
     padding: 1%;
     background-color: black;
@@ -107,9 +108,10 @@ span {
 }
 
 input, textarea{
-    padding: 5%;
+    padding: 2%;
     margin: 2%;
     background-color: rgb(174, 169, 169);
+    border-radius: 5px;
 }
 button, input[type="submit"]{
     background-color: rgb(23, 77, 77);
@@ -117,6 +119,7 @@ button, input[type="submit"]{
     margin: auto;
     border-radius: 5px;
     padding: 2.5%;
+    cursor: pointer;
 }
 
 li{
