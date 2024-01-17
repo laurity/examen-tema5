@@ -5,11 +5,11 @@
 
 const id = (id) => { return document.getElementById(id)}
 
-let mensajeError = [];
 
-const validar = e =>{
+
+const validar = (e) =>{
     e.preventDefault();
-    mensajeError = [];
+    let mensajeError = [];
 
     id("nombre").value.trim().length === 0 ? mensajeError.push("Debe de insertar un nombre") : null
     
@@ -19,6 +19,18 @@ const validar = e =>{
 
     //Faltan los checked
 
-    id("mensje").value.trim().length
+    id("mensaje").value.trim().length < 10 ? mensajeError.push("Debe de insertar al menos 10 caractéres") : null
+
+    if (mensajeError.length === 0 && confirm("¿Desea enviar el formulario?")){
+        formulario.submit();
+    } else if (mensajeError.length > 0) {
+        id("errores").textContent = "";
+        mensajeError.forEach(function (error){
+            let createLi = document.createElement("li")
+            createLi.textContent = error
+            mensaje.appendChild(createLi)
+        })
+    }
 }
 
+formulario.addEventListener("submit", validar)
